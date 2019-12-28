@@ -1,0 +1,18 @@
+.opt{
+    width: 130px;
+    height: 180px;
+    background-color: #fff;
+    margin-left: 20px;
+    text-align: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+    .icon{
+        font-size: 60px;
+        color:#20A7C7;
+    }
+    span{
+        display: inline-block;
+        color:#4A4A4A;
+        margin-top: 30px;
+    }
+}
