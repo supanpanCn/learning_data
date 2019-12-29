@@ -40,7 +40,8 @@ class Home extends Component {
     begin_login=(type)=>{
         this.props.history.push({
             pathname:'/login',
-            query:{
+            // query传参刷新后不会被保留
+            state:{
                 user_type:type
             }
         })

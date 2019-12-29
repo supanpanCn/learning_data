@@ -4,6 +4,7 @@ import Parent_hoc from './../index'
 // css module
 import styles from './../style/login.scss'
 import { Input, Icon, Checkbox, Button } from 'antd';
+import Tip from './tip'
 // react-redux
 import { connect } from 'react-redux'
 // 引入saga指令
@@ -17,7 +18,8 @@ class Login extends Component {
                 pass: ''
             },
             is_disabled:true,
-            checked:false
+            user_type:props.location.state.user_type,
+            tip:''
         }
     }
     render() {
@@ -48,7 +50,6 @@ class Login extends Component {
                     <div className={styles.checkbox}>
                         <Checkbox 
                           className={styles.check}
-                          checked = {this.state.checked}
                           onChange={this.props.checkbox_change.bind(this,this.props.is_selected)}
                           checked={this.props.is_selected}
                         >
@@ -56,11 +57,16 @@ class Login extends Component {
                         </Checkbox>
                         <span className={styles.forgetPass}>忘记密码</span>
                     </div>
-                    <Button type="primary" block disabled={this.state.is_disabled}>登录</Button>
+                    <Button 
+                      type="primary" 
+                      block 
+                      disabled={this.state.is_disabled}
+                      onClick={this.login}
+                    >登录</Button>
                 </div>
                 <div className={styles.back} onClick={this.back}>返回</div>
+                <Tip tip={this.state.tip}></Tip>
             </div>
-            
         )
     }
     // checkbox_change = ()=>{
@@ -71,6 +77,31 @@ class Login extends Component {
     //         }
     //     })
     // }
+    login=()=>{
+        this.$axios.get('./api/login.json').then(res=>{
+            
+            if(res.data.response=='ok'){
+                const {account,pass,user_type} = this.state.input
+                let result = res.data.user_list.filter(v=>{
+                    return v.account==account && v.pass==pass 
+                })
+                if(result.length){
+                    if(result[0].type!=user_type){
+                        this.setState({
+                            tip:'登录入口错误'
+                        })
+                        return
+                    }
+
+                    
+                }else{
+                    this.setState({
+                        tip:'账号或密码错误'
+                    })
+                }
+            }
+        })
+    }
     back = () => {
         this.props.history.push({
             pathname:'/home'
