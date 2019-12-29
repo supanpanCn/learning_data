@@ -1,0 +1,16 @@
+{
+    "response":"ok",
+    "user_list":[{
+        "account":"supan",
+        "pass":"123456",
+        "type":0
+    },{
+        "account":"lihua",
+        "pass":"123456",
+        "type":1
+    },{
+        "account":"wangwu",
+        "pass":"123456",
+        "type":2
+    }]
+}

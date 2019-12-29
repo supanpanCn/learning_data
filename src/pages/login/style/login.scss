@@ -1,0 +1,43 @@
+.login{
+    width: 294px;
+    height: 355px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    border: 1px solid #ccc;
+    .tit{
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .main{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 253px;
+        height: 190px;
+        top: 92px;
+        .input{
+            margin-bottom: 10px;
+        }
+        .checkbox{
+            margin-bottom: 40px;
+            .check{
+                float: left;
+            }
+            .forgetPass{
+                float: right;
+            }
+        }
+    }
+    .back{
+        position: absolute;
+        bottom: 30px;
+        border: 1px solid #ccc;
+        width: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

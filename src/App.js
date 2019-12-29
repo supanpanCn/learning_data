@@ -12,8 +12,10 @@ import { PersistGate } from 'redux-persist/integration/react'
 import {persistor} from './store'
 // 导入路由模块
 import homeRouter from './pages/home/router'
+import loginRouter from './pages/login/router'
 const routes = [
-  ...homeRouter
+  ...homeRouter,
+  ...loginRouter
 ]
 function App() {
   return (
