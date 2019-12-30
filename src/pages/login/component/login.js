@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // 高阶组件
-import Parent_hoc from './../index'
+import Parent_hoc from '@components/bg'
 // css module
 import styles from './../style/login.scss'
 import { Input, Icon, Checkbox, Button } from 'antd';
@@ -81,19 +81,21 @@ class Login extends Component {
         this.$axios.get('./api/login.json').then(res=>{
             
             if(res.data.response=='ok'){
-                const {account,pass,user_type} = this.state.input
+                const {account,pass} = this.state.input
                 let result = res.data.user_list.filter(v=>{
                     return v.account==account && v.pass==pass 
                 })
                 if(result.length){
-                    if(result[0].type!=user_type){
+                    if(result[0].type!=this.state.user_type){
                         this.setState({
                             tip:'登录入口错误'
                         })
                         return
                     }
 
-                    
+                    this.props.history.push({
+                        pathname:'/learn_index'
+                    })
                 }else{
                     this.setState({
                         tip:'账号或密码错误'

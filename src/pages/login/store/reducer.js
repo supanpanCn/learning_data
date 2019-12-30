@@ -5,7 +5,6 @@ import {fromJS} from 'immutable'
 
 const defaultState = fromJS({
     is_selected:localStorage.getItem('auto_login')?true:false,
-    test:123
 })
 
 // 对监听到的action进行分发处理

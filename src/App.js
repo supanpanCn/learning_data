@@ -10,9 +10,11 @@ import { renderRoutes } from 'react-router-config'
 // 导入路由模块
 import homeRouter from './pages/home/router'
 import loginRouter from './pages/login/router'
+import learnRouter from './pages/learn/router'
 const routes = [
   ...homeRouter,
-  ...loginRouter
+  ...loginRouter,
+  ...learnRouter
 ]
 
 function App() {

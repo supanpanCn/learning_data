@@ -1,0 +1,30 @@
+.hoc_parent{
+    width: 100vw;
+    height: 100vh;
+    background-color: #F2F2F2;
+    .hoc_header{
+        background-color: #fff;
+        color:#2986BB;
+        font-size: 20px;
+        position: relative;
+        .logo{
+            position: absolute;
+            left: 10px;
+            font-size: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .tit{
+            color: #ccc;
+            margin-left: 30px;
+        }
+        .active{
+            color:#333
+        }
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

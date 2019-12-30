@@ -6,6 +6,5 @@ function Tip(props) {
             {props.tip}
         </div>
     )
-
 }
 export default Tip
