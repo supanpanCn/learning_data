@@ -1,0 +1,43 @@
+1-项目初始化
+	npx create-react-app projectName						创建工程
+	cnpm i redux --save								数据存储		
+	cnpm i redux-saga --save							异步操作
+	cnpm i antd --save								ui库
+		--在入口文件中引入样式文件  import 'antd/dist/antd.css'
+	cnpm i axios --save								异步请求
+		--在redux-saga的模块文件中引入使用即可，并不需要在入口中全局注入
+	cnpm i react-redux --save							注入store
+		--在根组件导入并向所有组件注入store
+			-import {Provider} from 'react-redux'
+			-import store from './store'
+	cnpm i immutable --save							state修改	
+			-https://www.cnblogs.com/chris-oil/p/8494337.html
+			-https://edu.csdn.net/course/play/24698
+	cnpm i react-router-dom --save						路由
+	cnpm install --save-dev redux-devtools-extension					调试工具
+	cnpm i redux-immutable --save						合并reducer
+	cnpm i react-router-config --save						路由拆分
+	cnpm i node-sass --save	cnpm i sass-loader --save				使用sass
+	npm install redux-persist --save						持久化存储
+	memoize-one                                                                                                                          计算属性
+	redux-persist-immutable                                                                                                         全局转化为immutable
+2-alias别名
+	npm run eject
+	在alias下新增如下格式 '@components': path.resolve(__dirname, '../src/components')
+3-按需导入
+	asyncComponent文件
+4-css作用域
+	找到webpack.config.js,搜索test: sassRegex，在getStyleLoaders中添加modules:true
+	在引入时采用import styles from 'name.scss'
+	使用时采用styles.className
+5-传参
+	this.props.history.push({
+		pathname:'url',
+		state/query   //query不显示在url
+	})
+
+6-高阶组件可以实现vue中的slot，将通用的逻辑或ui进行提取
+7-多类名添加{`${} ${}`}
+
+	
+
