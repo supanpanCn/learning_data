@@ -94,7 +94,7 @@ class Login extends Component {
                     }
 
                     this.props.history.push({
-                        pathname:'/learn_index'
+                        pathname:'/learn_index/home'
                     })
                 }else{
                     this.setState({

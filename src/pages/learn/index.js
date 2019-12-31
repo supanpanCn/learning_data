@@ -3,6 +3,7 @@ import Parent_hoc from '@components/bg'
 import styles from './style/index.scss'
 import { Breadcrumb, Icon, Tag, List } from 'antd';
 import Home from './component/home'
+import Report from './component/learn_report'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class Learn_index extends Component {
@@ -28,8 +29,10 @@ class Learn_index extends Component {
         }
     }
     render() {
+        console.log('update')
         return (
-            <div className={styles.learn_index}>
+            
+            <div className={styles.learn_index} key={this.props.location.key}>
                 <Breadcrumb separator='>' className={styles.breadcrumb}>
                     <Breadcrumb.Item>学情分析</Breadcrumb.Item>
                     <Breadcrumb.Item>
@@ -38,8 +41,12 @@ class Learn_index extends Component {
                 </Breadcrumb>
                 <Router>
                     <Switch>
+                        {/* 由于不是直接通过路由导航的，因此需要将props向下传递 */}
                         <Route exact path='/learn_index/home'>
-                            <Home></Home>
+                            <Home {...this.props}></Home>
+                        </Route>
+                        <Route exact path='/learn_index/report'>
+                            <Report {...this.props}></Report>
                         </Route>
                     </Switch>
                 </Router>

@@ -7,7 +7,10 @@ export default [
         routes:[
             {
                 path: '/learn_index/home',
-                exact: true,
+                component: asyncComponent(() => import('./component/home')),
+            },
+            {
+                path: '/learn_index/report',
                 component: asyncComponent(() => import('./component/home')),
             }
         ]

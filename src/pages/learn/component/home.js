@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styles from './../style/home.scss'
 import { Menu, Dropdown, Icon, Button, Input, Tag ,Pagination } from 'antd';
 const { Search } = Input;
-const { CheckableTag } = Tag;
 class Home extends Component {
     constructor(props) {
         super(props)
@@ -29,25 +28,29 @@ class Home extends Component {
                     tag: '单元测',
                     title: '2018-2019学年数学第三章第四单元测试',
                     info: ['七年级', '数学', '2018-2-7'],
-                    info_tit:['年级','学科','考试时间']
+                    info_tit:['年级','学科','考试时间'],
+                    paper_id:1
                 },
                 {
                     tag: '期中测试',
                     title: '2018-2019学年数学期中考试',
                     info: ['七年级', '数学', '2018-6-27'],
-                    info_tit:['年级','学科','考试时间']
+                    info_tit:['年级','学科','考试时间'],
+                    paper_id:2
                 },
                 {
                     tag: '期末考',
                     title: '2018-2019学年数学期末考试',
                     info: ['七年级', '数学', '2018-12-27'],
-                    info_tit:['年级','学科','考试时间']
+                    info_tit:['年级','学科','考试时间'],
+                    paper_id:3
                 },
                 {
                     tag: '期末考',
                     title: '2018-2019学年数学期末考试',
                     info: ['七年级', '数学', '2018-12-27'],
-                    info_tit:['年级','学科','考试时间']
+                    info_tit:['年级','学科','考试时间'],
+                    paper_id:4
                 }
             ]
         }
@@ -112,7 +115,7 @@ class Home extends Component {
                                             )
                                         })}
                                     </p>
-                                    <Button className={styles.button}>查看报告</Button>
+                                    <Button className={styles.button} onClick={this.look_report.bind(this,v.paper_id)}>查看报告</Button>
                                 </li>
                             )
                         })}
@@ -122,6 +125,15 @@ class Home extends Component {
                 <Pagination className={styles.pagination}  defaultCurrent={1} total={35} />
             </div>
         )
+    }
+    look_report = (id)=>{
+        console.log(this.props)
+        this.props.history.push({
+            pathname:'/learn_index/report',
+            state:{
+                paper_id:id
+            }
+        })
     }
     reacte_menu = (v) => {
         return (
