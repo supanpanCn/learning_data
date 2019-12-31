@@ -45,7 +45,7 @@ class Learn_index extends Component {
                         <Route exact path='/learn_index/home'>
                             <Home {...this.props}></Home>
                         </Route>
-                        <Route exact path='/learn_index/report'>
+                        <Route  path='/learn_index/report'>
                             <Report {...this.props}></Report>
                         </Route>
                     </Switch>

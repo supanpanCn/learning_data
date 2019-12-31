@@ -3,6 +3,7 @@
     height: 95%;
     box-sizing: border-box;
     padding: 10px 30px;
+    position: relative;
     .info_p{
         width: 100%;
         height: 30px;
@@ -16,5 +17,22 @@
             margin-right: 20px;
             color:#ccc;
         }
+    }
+    .ul{
+        width: 135px;
+        background-color: #fff;
+        .li_act{
+            background-color: #17ADED;
+            color:#fff;
+        }
+    }
+    .main{
+        position: absolute;
+        width: 1325px;
+        height: 550px;
+        background-color: #fff;
+        left: 180px;
+        top: 56px;
+        border-radius: 5px;
     }
 }

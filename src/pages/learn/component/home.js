@@ -127,7 +127,6 @@ class Home extends Component {
         )
     }
     look_report = (id)=>{
-        console.log(this.props)
         this.props.history.push({
             pathname:'/learn_index/report',
             state:{
